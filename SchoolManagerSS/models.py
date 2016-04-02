@@ -12,7 +12,7 @@ class Estudiante(models.Model):
         (MASCULINO, 'Masculino'),
         (FEMENINO, 'Femenino'),
         ]
-    gender = models.CharField('Sexo', choices=GENDER_CHOICES, help_text='Genero o Sexo del Estudiante')
+    gender = models.CharField('Sexo', choices=GENDER_CHOICES, max_length=9, help_text='Genero o Sexo del Estudiante')
     edad = models.IntegerField('Edad', help_text='Edad del Estudiante')
     direccion = models.TextField('Dirección', help_text='Dirección del Estudiante')
     INICIAL = 'IN'
@@ -119,7 +119,7 @@ class Periodo(models.Model):
     a_o = models.IntegerField('Año')
     fechaInicial = models.DateField('Fecha Inicial')
     fechaCulminacion = models.DateField('Fecha de Culminación')
-    totalEstudiantes = models.IntegerField('Total Estudiantes Inscritos')
+    totalEstudiantes = models.IntegerField('Total Estudiantes Inscritos', default=0)
 
     def __str__(self):
         return self.title
