@@ -12,10 +12,17 @@ Class-based views
 Including another URLconf
     1. Import the include() function: from django.conf.urls import url, include
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
+
+    ^ denota el principio del texto
+    $ denota el final del texto
+    \d representa un dígito
+    + indica que el ítem anterior debería ser repetido por lo menos una vez
+    () para encerrar una parte del patrón
 """
-from django.conf.urls import url
+from django.conf.urls import url, include
 from django.contrib import admin
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    url(r'', include('SchoolManagerSS.urls'))
 ]
